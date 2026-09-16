@@ -216,6 +216,8 @@ npm run dev
 
 Por padrão o frontend espera o backend em `http://localhost:8000` (configurável via `NEXT_PUBLIC_API_BASE_URL` em `.env.local`). Acesse `http://localhost:3000`.
 
+> **Nota (Windows, pasta em drive de rede):** se o projeto estiver em um caminho de rede/UNC mapeado (ex.: `Q:\...`), o Turbopack (bundler padrão do Next.js) falha ao processar `app/globals.css` com o erro `Cannot depend on path (...AGENTS.md) outside of root directory`. Por isso os scripts `dev`/`build` já usam a flag `--webpack`, que não tem esse problema. Se preferir a velocidade do Turbopack, mova o projeto para um disco local.
+
 ## 14. Exemplos de perguntas
 
 - "Qual é o preço FIPE de um Toyota Corolla XEi 2022?"
