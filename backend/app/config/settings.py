@@ -14,7 +14,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 GEMINI_API_KEY: str | None = os.environ.get("GEMINI_API_KEY")
-GEMINI_MODEL: str = os.environ.get("GEMINI_MODEL", "gemini-2.5-flash")
+GEMINI_MODEL: str = os.environ.get("GEMINI_MODEL", "gemini-3.6-flash")
 
 # Opcional: eleva o limite de requisições não autenticadas da API pública da
 # FIPE (ver app/tools/fipe_tool.py). A aplicação funciona normalmente sem ele.

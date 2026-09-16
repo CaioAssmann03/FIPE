@@ -87,7 +87,7 @@ O notebook e o backend implementam exatamente a mesma lógica de agente e a mesm
 | Notebook   | Python, [`google-genai`](https://pypi.org/project/google-genai/) (SDK oficial do Gemini), `requests` |
 | Frontend   | Next.js (App Router), TypeScript, Tailwind CSS |
 | Backend    | Python, FastAPI, `google-genai`, `requests` |
-| IA         | Gemini API (function calling) — modelo padrão `gemini-2.5-flash` |
+| IA         | Gemini API (function calling) — modelo padrão `gemini-3.6-flash` |
 | Dados      | [Fipe API v2](https://deividfortuna.github.io) (Parallelum) — `https://fipe.parallelum.com.br/api/v2` |
 
 ## 6. Estrutura do repositório
@@ -248,7 +248,7 @@ Em todos os casos, o Gemini recebe esse erro estruturado e o traduz em uma expli
 - **Carros, motos e caminhões são suportados** pela API e pelo código, mas os exemplos e testes deste projeto focam em carros e motos.
 - **Correspondência de nomes é heurística** (normalização de texto + similaridade): nomes de modelo muito diferentes da nomenclatura oficial da FIPE podem não ser encontrados.
 - **Preços mudam mensalmente**: os valores retornados refletem a tabela vigente no momento da consulta, não um valor fixo.
-- **O modelo Gemini padrão** (`gemini-2.5-flash`) é configurável via variável de ambiente/constante, mas depende de disponibilidade contínua do modelo na API do Google.
+- **O modelo Gemini padrão** (`gemini-3.6-flash`) é configurável via variável de ambiente/constante (`GEMINI_MODEL`), pois a disponibilidade de modelos muda com o tempo — durante o próprio desenvolvimento deste projeto o `gemini-2.5-flash` foi descontinuado para novos usuários. Se a aplicação retornar um erro dizendo que o modelo não está mais disponível, atualize essa variável (no notebook) ou o `.env` (no backend) para o modelo recomendado na mensagem de erro.
 
 ## 17. Como apresentar este projeto ao professor
 
